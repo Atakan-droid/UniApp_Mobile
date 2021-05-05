@@ -17,6 +17,7 @@ render(){
       <BaseNavigation/>
   </Provider>
   );
+  
 }
 };
 export default App;
