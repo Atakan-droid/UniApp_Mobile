@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {View,Text} from 'react-native'
-export class BaseNavigation extends Component {
+export class baseNavigation extends Component {
     render() {
         return (
             <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
@@ -10,4 +10,4 @@ export class BaseNavigation extends Component {
     }
 }
 
-export default BaseNavigation
+export default baseNavigation

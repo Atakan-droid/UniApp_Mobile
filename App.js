@@ -4,7 +4,7 @@ import {applyMiddleware, createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {reducer} from './src/redux/reducers/index';
 import thunk from 'redux-thunk';
-import BaseNavigation from './src/navigation/BaseNavigation';
+import BaseNavigation from './src/navigation/baseNavigation';
 
 const store = createStore(reducer,applyMiddleware(thunk))
 
