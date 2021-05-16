@@ -18,7 +18,7 @@ export const getUserRegister = (userObj) => (dispatch) => {
       });
     })
     .catch((error)=>
-    MyAlert(error.response.data.Errors[0].ErrorMessage)
+    MyAlert("error.response.data.Errors[0].ErrorMessage")
  );
     
 }
@@ -47,7 +47,7 @@ export const getUserDetails = (userId) => (dispatch) => {
       })
     })
     .catch((error)=>
-    MyAlert(error.response.data.Errors[0].ErrorMessage)
+    MyAlert("error.response.data.Errors[0].ErrorMessage")
  );
    
 }
@@ -62,7 +62,7 @@ export const getSingleUnivercity = (univercityId) => (dispatch) => {
       });
     })
     .catch((error)=>
-    MyAlert(error.response.data.Errors[0].ErrorMessage)
+    MyAlert("error.response.data.Errors[0].ErrorMessage")
  );
 }
 export const getComments = (univercityId) => (dispatch) => {
@@ -76,6 +76,6 @@ export const getComments = (univercityId) => (dispatch) => {
       });
     })
     .catch((error)=>
-    MyAlert(error.response.data.Errors[0].ErrorMessage)
+    MyAlert("error.response.data.Errors[0].ErrorMessage")
  );
 }
