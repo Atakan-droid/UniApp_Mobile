@@ -13,7 +13,7 @@ const INITIAL_STATE={
     isSuccess:"",
     register:false,
     loginId:'',
-    loginSuccess:true,
+    loginSuccess:false,
 };
 
 export const reducer=(state=INITIAL_STATE,action)=>{
