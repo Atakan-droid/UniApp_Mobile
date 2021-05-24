@@ -18,9 +18,9 @@ export default class Card extends React.Component {
       >
         
         <View style={styles.textInput}>
-          <TextInput
+          <TextInput style={{paddingLeft:20}}
             value={this.props.search}
-            placeholder="Lütfen İfade Giriniz"
+            placeholder="Lütfen Aramak İstediğiniz İfadeyi Giriniz"
             onChangeText={this.props.onChangeText}
           />
         </View>

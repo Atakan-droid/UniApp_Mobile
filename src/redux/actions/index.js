@@ -18,7 +18,7 @@ export const getUserRegister = (userObj) => (dispatch) => {
       });
     })
     .catch((error)=>
-    MyAlert("error.response.data.Errors[0].ErrorMessage")
+    MyAlert(error.response.data.Errors[0].ErrorMessage)
  );
     
 }

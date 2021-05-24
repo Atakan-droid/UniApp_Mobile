@@ -8,6 +8,7 @@ import RegisterScreen from '../screens/registerScreen';
 import LoginScreen from '../screens/loginScreen';
 import TabNavigator from './navigation';
 import DetailScreen from '../screens/univercityDetailScreen';
+import UnivercityProfileScreen from '../screens/univercityProfileScreen';
 
 
 const Stack = createStackNavigator();
@@ -34,7 +35,8 @@ render(){
     <NavigationContainer >
       <Stack.Navigator initialRouteName="Main">
             <Stack.Screen name="Main" component={TabNavigator} options={{headerShown:false}}  />
-            <Stack.Screen name="Detail" component={DetailScreen}/>
+            <Stack.Screen name="Detail" component={DetailScreen} options={{headerShown:false}} />
+            <Stack.Screen name="Üniversite Detay" component={UnivercityProfileScreen} options={{headerShown:false}} />
           </Stack.Navigator>
     </NavigationContainer>
   );
