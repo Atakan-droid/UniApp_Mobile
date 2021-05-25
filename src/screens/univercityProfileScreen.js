@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Button,
   FlatList,
+  ScrollView,
 } from "react-native";
 import { connect } from "react-redux";
 import { getSingleUnivercity, getComments } from "../redux/actions/index";
@@ -91,34 +92,51 @@ const detailScreen = (props) => {
         <Details
           move="fadeInUp"
           title={props.singleUnivercity.univercityName}
-          subtitle={props.singleUnivercity.univercityRector}
+          subtitle={
+            props.singleUnivercity.univercityRector +
+            " / " +
+            props.singleUnivercity.cityName
+          }
         />
         <View style={styles.followButton}>
-        {following ? (
-        <Button title="Takip Ediliyor" onPress={() => onUnfollow()} />
-      ) : (
-        <Button title="Takip Et" onPress={() => onFollow()} />
-      )}
-      </View>
+          {following ? (
+            <Button title="Takip Ediliyor" onPress={() => onUnfollow()} />
+          ) : (
+            <Button title="Takip Et" onPress={() => onFollow()} />
+          )}
+        </View>
       </View>
       
       <View style={styles.containertwo}>
-      <TextInput
-        style={styles.textInputStyle}
-        label="Yorum Yap"
-        value={sendComment.entry}
-        onChangeText={(e) =>
-          setComment({
-            userId: props.loginId,
-            univercityId: props.route.params.univercityId,
-            entry: e,
-          })
-        }
-      />
-      <View style={styles.commentButton}>
-       <Button  onPress={() => postComment()} title="Yorum Yap" color="#841584" />
+        <ScrollView>
+      <View style={styles.progress}>
+          <Text style={styles.textone}>Açıklama</Text>
         </View>
-
+        <Text style={styles.descText}>{props.singleUnivercity.univercityDescription}</Text>
+       
+        </ScrollView> 
+        <View style={styles.line}></View>
+        <TextInput
+          style={styles.textInputStyle}
+          label="Yorum Yap"
+          value={sendComment.entry}
+          onChangeText={(e) =>
+            setComment({
+              userId: props.loginId,
+              univercityId: props.route.params.univercityId,
+              entry: e,
+            })
+          }
+        />
+        <View style={styles.commentButton}>
+          <Button
+            onPress={() => postComment()}
+            title="Yorum Yap"
+            color="#841584"
+          />
+        </View>
+      
+        <View style={styles.line}></View> 
         <View style={styles.progress}>
           <Text style={styles.textone}>Yorumlar</Text>
         </View>
@@ -136,11 +154,9 @@ const detailScreen = (props) => {
           )}
         />
 
-        <View>
-         
-        </View>
       </View>
     </View>
+    
   );
 };
 
@@ -154,31 +170,37 @@ const styles = StyleSheet.create({
     flex: 4,
     display: "flex",
   },
-  commentButton:{
-    padding:20,
+  commentButton: {
+    padding: 20,
   },
-  followButton:{
-      paddingLeft:20,
-      paddingRight:20,
-      paddingBottom:20,
+  followButton: {
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 20,
+    paddingTop: 40,
   },
   containertwo: {
     flex: 6,
     backgroundColor: "#fff",
     borderTopRightRadius: 40,
     borderTopLeftRadius: 40,
-    
   },
   textInputStyle: {
     height: 40,
-    borderRadius:20,
-    paddingLeft:20,
-    marginTop:20,
+    borderRadius: 20,
+    paddingLeft: 20,
+    marginTop: 20,
     borderWidth: 1,
-    marginStart:20,
-    marginEnd:20,
+    marginStart: 20,
+    marginEnd: 20,
     borderColor: "#009688",
     backgroundColor: "white",
+  },
+  descText:{
+    paddingLeft:15,
+    paddingRight:15,
+    fontSize:15,
+    color:'#2D2D2D'
   },
   boxone: {
     flex: 5,

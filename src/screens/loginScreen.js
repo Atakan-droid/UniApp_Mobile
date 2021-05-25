@@ -27,7 +27,7 @@ class loginScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>Tekrar, Hoşgeldiniz</Text>
+        <Text style={styles.header}>Hoşgeldiniz</Text>
         <View style={{ height: "30%" }}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <View>

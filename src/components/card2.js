@@ -7,7 +7,7 @@ export default class Card extends React.Component{
             <Animatable.View animation={this.props.move} duration={1500} style={styles.cardone}>
                 <TouchableOpacity style={styles.box1} onPress={this.props.screenchange}>
                 <Text style={{fontSize:20,color:'#2D2D2D',letterSpacing:-0.9}}>{this.props.title}</Text>
-                <Text numberOfLines={2} style={{fontSize:15,color:'#2D2D2D',letterSpacing:-0.5,paddingVertical:5}}>{this.props.subtitle}</Text>                
+                <Text numberOfLines={2} style={{fontSize:15,color:'#BEC4C9',letterSpacing:-0.5,paddingVertical:5}}>{this.props.subtitle}</Text>                
                 </TouchableOpacity>
             </Animatable.View>
         );

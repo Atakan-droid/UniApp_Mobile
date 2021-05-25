@@ -14,11 +14,18 @@ export const getUserRegister = (userObj) => (dispatch) => {
       dispatch({
         type: "USER_REGISTER_SUCCESS",
         payload: response.data.success,
-        message: data.message,
-      });
+        message: response.data.message,
+      })
     })
     .catch((error)=>
-    MyAlert(error.response.data.Errors[0].ErrorMessage)
+    {
+      if(error.response.data.Errors.length>0){
+
+        MyAlert(error.response.data.Errors[0].ErrorMessage)
+      }
+      
+    }
+   
  );
     
 }

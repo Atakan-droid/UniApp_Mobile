@@ -16,13 +16,16 @@ export default class Card extends React.Component{
 }
 const styles = StyleSheet.create({
     cardone : {
-        flex : 0.5,
-        marginBottom : 15,
+        flex : 0.1,
+        marginBottom : 45,
         display : 'flex',
-        flexDirection : 'row'
+        flexDirection : 'row',
+        
     },
     box1 : {
-        paddingHorizontal : 110
+        paddingHorizontal : 100,
+        
+        
     },
 
 })

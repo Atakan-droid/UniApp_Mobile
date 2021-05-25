@@ -18,32 +18,32 @@ const MainNavigation = (props) => {
   return (
     <Tab.Navigator initialRouteName="Posts">
       <Tab.Screen
-        name="Posts"
+        name="Paylaşımlar"
         component={postScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
+            <MaterialCommunityIcons name="home" color={color} size={40} />
           ),
         }}
       />
       <Tab.Screen
-        name="Univercities"
+        name="Üniversiteler"
         component={UnivercityScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="magnify" color={color} size={26} />
+            <MaterialCommunityIcons name="magnify" color={color} size={40} />
           ),
         }}
       />
       <Tab.Screen
-        name="Profile"
+        name="Profil"
         component={ProfileScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="emoticon-outline"
               color={color}
-              size={26}
+              size={40}
             />
           ),
         }}

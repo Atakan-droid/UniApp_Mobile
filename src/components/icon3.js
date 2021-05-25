@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         flex : 1,
     },
     box1 : {
-        paddingHorizontal : 110
+        paddingHorizontal : 100
     },
 
 })

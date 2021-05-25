@@ -2,7 +2,7 @@ import {Alert} from 'react-native';
 
 export function MyAlert(message){
     Alert.alert(
-        "Hata",
+        "Bilgi Mesajı",
         message,
         [
           { text: "TAMAM"}

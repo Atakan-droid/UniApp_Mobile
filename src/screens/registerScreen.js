@@ -8,9 +8,10 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
-import {Button} from 'react-native-paper'
+import { Button } from "react-native-paper";
 import { connect } from "react-redux";
 import { getUserRegister } from "../redux/actions/index";
+import { MyAlert } from "../utilities/MyAlert";
 
 class registerScreen extends React.Component {
   constructor(props) {
@@ -23,11 +24,19 @@ class registerScreen extends React.Component {
     };
   }
 
-  submitHandler = () => {
-    console.log(this.state);
-    this.props.getUserRegister(this.state);
-    this.props.navigation.navigate("Login");
-  };
+  submitHandler() {
+    try {
+      
+       this.props.getUserRegister(this.state)
+
+    } catch (error) {
+      console.log(this.props.message)
+    } finally{
+      MyAlert(this.props.message)
+      this.props.navigation.navigate("Login")
+    }
+  
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -162,8 +171,12 @@ class registerScreen extends React.Component {
           <View style={styles.titleone}></View>
         </View>
 
-        <View style={{ marginTop: 50,top:30 }}>
-          <Button  onPress={() => this.submitHandler()}>
+        <View style={{ marginTop: 50, top: 30 }}>
+          <Button
+            onPress={() => {
+              this.submitHandler();
+            }}
+          >
             Kayıt Ol
           </Button>
           <Text>Kayıtlı mısınız?</Text>
