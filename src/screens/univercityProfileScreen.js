@@ -105,17 +105,19 @@ const detailScreen = (props) => {
             <Button title="Takip Et" onPress={() => onFollow()} />
           )}
         </View>
-      </View>
-      
-      <View style={styles.containertwo}>
-        <ScrollView>
-      <View style={styles.progress}>
+        {/* <View style={styles.progress}>
           <Text style={styles.textone}>Açıklama</Text>
         </View>
-        <Text style={styles.descText}>{props.singleUnivercity.univercityDescription}</Text>
-       
-        </ScrollView> 
-        <View style={styles.line}></View>
+
+        <Text style={styles.descText}>
+          {props.singleUnivercity.univercityDescription}
+        </Text> */}
+      </View>
+
+      <View style={styles.containertwo}>
+        <View>
+          <View style={styles.cards}></View>
+        </View>
         <TextInput
           style={styles.textInputStyle}
           label="Yorum Yap"
@@ -135,8 +137,8 @@ const detailScreen = (props) => {
             color="#841584"
           />
         </View>
-      
-        <View style={styles.line}></View> 
+
+        <View style={styles.line}></View>
         <View style={styles.progress}>
           <Text style={styles.textone}>Yorumlar</Text>
         </View>
@@ -144,7 +146,7 @@ const detailScreen = (props) => {
           data={props.comments}
           keyExtractor={(x, i) => i.toString()}
           renderItem={({ item }) => (
-            <View style={styles.cards}>
+            <View  style={styles.cards}>
               <Card
                 move="fadeInUp"
                 title={item.userName}
@@ -153,10 +155,8 @@ const detailScreen = (props) => {
             </View>
           )}
         />
-
       </View>
     </View>
-    
   );
 };
 
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#303841",
   },
   containerone: {
-    flex: 4,
+    flex: 6,
     display: "flex",
   },
   commentButton: {
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     paddingTop: 40,
   },
   containertwo: {
-    flex: 6,
+    flex: 8,
     backgroundColor: "#fff",
     borderTopRightRadius: 40,
     borderTopLeftRadius: 40,
@@ -196,11 +196,11 @@ const styles = StyleSheet.create({
     borderColor: "#009688",
     backgroundColor: "white",
   },
-  descText:{
-    paddingLeft:15,
-    paddingRight:15,
-    fontSize:15,
-    color:'#2D2D2D'
+  descText: {
+    paddingLeft: 15,
+    paddingRight: 15,
+    fontSize: 15,
+    color: "#2D2D2D",
   },
   boxone: {
     flex: 5,

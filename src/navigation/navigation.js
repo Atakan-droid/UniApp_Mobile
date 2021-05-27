@@ -16,13 +16,16 @@ const MainNavigation = (props) => {
     props.getUserDetails(props.loginId);
   }, []);
   return (
-    <Tab.Navigator initialRouteName="Posts">
+    <Tab.Navigator
+      tabBarOptions={{ showLabel: false }}
+      initialRouteName="Posts"
+    >
       <Tab.Screen
         name="Paylaşımlar"
         component={postScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={40} />
+            <MaterialCommunityIcons name="home" color={color} size={30} />
           ),
         }}
       />
@@ -31,7 +34,7 @@ const MainNavigation = (props) => {
         component={UnivercityScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="magnify" color={color} size={40} />
+            <MaterialCommunityIcons name="magnify" color={color} size={30} />
           ),
         }}
       />
@@ -43,7 +46,7 @@ const MainNavigation = (props) => {
             <MaterialCommunityIcons
               name="emoticon-outline"
               color={color}
-              size={40}
+              size={30}
             />
           ),
         }}

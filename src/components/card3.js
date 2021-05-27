@@ -13,7 +13,7 @@ export default class Card extends React.Component{
                 <View style={styles.box2}>
                     <Text style={{fontSize:20,color:'#2D2D2D',letterSpacing:-0.9}}>{this.props.title}</Text>
                     <Text style={{fontSize:15,color:'#BEC4C9',letterSpacing:-0.5,paddingVertical:5}}>{this.props.subtitle}</Text>
-                    <Text style={{fontSize:15,color:'#BEC4C9',letterSpacing:-0.5,paddingVertical:5}}>{this.props.subtitle2}</Text>
+                    
                 </View>
             </Animatable.View>
         );
