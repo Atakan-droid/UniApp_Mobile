@@ -19,10 +19,8 @@ export const getUserRegister = (userObj) => (dispatch) => {
     })
     .catch((error)=>
     {
-      if(error.response.data.Errors.length>0){
-
         MyAlert(error.response.data.Errors[0].ErrorMessage)
-      }
+      
       
     }
    

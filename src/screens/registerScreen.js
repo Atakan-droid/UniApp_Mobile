@@ -32,7 +32,7 @@ class registerScreen extends React.Component {
     } catch (error) {
       console.log(this.props.message)
     } finally{
-      MyAlert(this.props.message)
+      MyAlert("Kullanıcı Kayıt İşlemi")
       this.props.navigation.navigate("Login")
     }
   
